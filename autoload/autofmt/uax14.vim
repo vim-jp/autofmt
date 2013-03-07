@@ -1,6 +1,6 @@
 " Maintainer:   Yukihiro Nakadaira <yukihiro.nakadaira@gmail.com>
 " License:      This file is placed in the public domain.
-" Last Change:  2009-10-04
+" Last Change:  2013-03-07
 
 let s:cpo_save = &cpo
 set cpo&vim
