@@ -18,7 +18,7 @@ let s:compat = autofmt#compat#import()
 let s:lib = {}
 call extend(s:lib, s:compat)
 
-let s:lib.uni = unicode#import()
+let s:lib.uni = autofmt#unicode#import()
 
 function! s:lib.check_boundary(lst, i)
   " UAX #14: Line Breaking Properties

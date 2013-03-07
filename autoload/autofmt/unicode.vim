@@ -10,7 +10,7 @@ endif
 let s:cpo_save = &cpo
 set cpo&vim
 
-function unicode#import()
+function autofmt#unicode#import()
   return s:lib
 endfunction
 
