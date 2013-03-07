@@ -3,7 +3,10 @@
 " Last Change:  2013-03-07
 
 if &encoding != "utf-8" && !has("iconv")
-  echoerr "unicode.vim requires iconv() in non utf-8 encoding"
+  " Use echomsg because echoerr is not displayed in formatexpr context.
+  " Echomsg is same but message is logged in :messages buffer.
+  echomsg "autofmt/unicode.vim requires iconv() in non utf-8 encoding"
+  echoerr "autofmt/unicode.vim requires iconv() in non utf-8 encoding"
   finish
 endif
 
