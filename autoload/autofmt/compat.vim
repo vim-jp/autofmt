@@ -853,7 +853,7 @@ else
     return 0
 
   endfunction
-endfunction
+endif
 
 " FIXME: This may break another :redir session?
 " It is useful if vim provide builtin function for this.
