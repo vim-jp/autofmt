@@ -825,29 +825,34 @@ function s:lib.comp_textwidth(ff)
   return textwidth
 endfunction
 
-" FIXME: How to detect command-line window?
-function s:lib.is_cmdwin()
+if exists('*getcmdwintype')
+  function s:lib.is_cmdwin()
+    return getcmdwintype() != ''
+  endfunction
+else
+  function s:lib.is_cmdwin()
 
-  " workaround1
-  "return bufname('%') == '[Command Line]'
+    " workaround1
+    "return bufname('%') == '[Command Line]'
 
-  " workaround2
-  " MEMO: In formatexpr, exception is not raised without setting 'debug'.
-  let debug_save = &debug
-  set debug=throw
-  try
-    execute winnr() . "wincmd w"
-    " or
-    "execute "tabnext " . tabpagenr()
-  catch /^Vim\%((\a\+)\)\=:E11:/
-    " Vim(wincmd):E11: Invalid in command-line window; <CR> executes, CTRL-C quits: 2wincmd w
-    " Vim(tabnext):E11: Invalid in command-line window; <CR> executes, CTRL-C quits: tabnext 1
-    return 1
-  finally
-    let &debug = debug_save
-  endtry
-  return 0
+    " workaround2
+    " MEMO: In formatexpr, exception is not raised without setting 'debug'.
+    let debug_save = &debug
+    set debug=throw
+    try
+      execute winnr() . "wincmd w"
+      " or
+      "execute "tabnext " . tabpagenr()
+    catch /^Vim\%((\a\+)\)\=:E11:/
+      " Vim(wincmd):E11: Invalid in command-line window; <CR> executes, CTRL-C quits: 2wincmd w
+      " Vim(tabnext):E11: Invalid in command-line window; <CR> executes, CTRL-C quits: tabnext 1
+      return 1
+    finally
+      let &debug = debug_save
+    endtry
+    return 0
 
+  endfunction
 endfunction
 
 " FIXME: This may break another :redir session?
