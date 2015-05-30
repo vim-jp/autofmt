@@ -7,4 +7,9 @@ Usage:
   :set runtimepath+=/path/to/autofmt/
   :set formatexpr=autofmt#compat#formatexpr()
 
+Following method can be used:
+  autofmt#compat#formatexpr():    Vim compatible
+  autofmt#uax14#formatexpr():     Implementation of UAX #14
+  autofmt#japanese#formatexpr():  Japanese
+
 See doc/autofmt.txt for more information.
