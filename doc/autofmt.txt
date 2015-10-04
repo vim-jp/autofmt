@@ -1,12 +1,19 @@
+*autofmt.txt*		  Text Formatting Plugin
 
-			    Text Formatting Plugin
+Maintainer:   Yukihiro Nakadaira <yukihiro.nakadaira@gmail.com>
+License:      public domain
+
 
 This is a 'formatexpr' plugin.
+
+1. Usage				    |autofmt-usage|
+2. Language				    |autofmt-language|
+3. Customize Unicode Line Break Property    |autofmt-customize|
 
 {only works when 'encoding' is utf-8 or |+iconv| is enabled}
 
 ==============================================================================
-1. Usage
+1. Usage					   *autofmt-usage*
 >
   :set runtimepath+=/path/to/autofmt/
   :set formatexpr=autofmt#compat#formatexpr()
@@ -20,7 +27,7 @@ Following method can be used:
 UAX #14: Line Breaking Properties: http://unicode.org/reports/tr14/.
 
 ==============================================================================
-2. Language
+2. Language					   *autofmt-language* 
 
 If you want to create your 'formatexpr' plugin, autofmt can be used as
 framework.  You can define your language specific formatting easily.
@@ -47,7 +54,7 @@ For example: >
   endfunction
 <
 ==============================================================================
-3. Customize Unicode Line Break Property
+3. Customize Unicode Line Break Property	   *autofmt-customize*
 
 uax14.vim is Pair Table-Based implementation of UAX #14.  It uses Unicode Line
 Break Property.  But it is not useful for all language.  You can customize it
