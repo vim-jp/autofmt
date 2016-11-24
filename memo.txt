@@ -8,6 +8,12 @@ http://unicode.org/reports/tr14/
 Word wrap - Wikipedia
 http://en.wikipedia.org/wiki/Word_wrap
 
+Requirements for Japanese Text Layout
+https://www.w3.org/TR/jlreq/
+日本語組版処理の要件
+https://www.w3.org/TR/jlreq/ja/
+Mainly based on JIS X 4051
+
 JISC 日本工業標準調査会
 http://www.jisc.go.jp/
 JIS X 4051 - Wikipedia

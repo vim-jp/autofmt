@@ -1,6 +1,6 @@
 " Maintainer:   Yukihiro Nakadaira <yukihiro.nakadaira@gmail.com>
 " License:      This file is placed in the public domain.
-" Last Change:  2014-08-28
+" Last Change:  2016-11-24
 
 if &encoding != "utf-8" && !has("iconv")
   " Use echomsg because echoerr is not displayed in formatexpr context.
@@ -95,7 +95,7 @@ endfunction
 
 function s:lib.uax14_pair_table(before, after)
   " these are not handled in the pair tables
-  let not_in_table = '\vAI|BK|CB|CR|LF|NL|SA|SG|SP|XX'
+  let not_in_table = '\vAI|BK|CB|CJ|CR|LF|NL|SA|SG|SP|XX'
   if a:before =~ not_in_table || a:after =~ not_in_table
     return self.PROHIBITED_BRK
   else
