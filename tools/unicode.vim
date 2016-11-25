@@ -57,9 +57,17 @@ function! s:main()
   else
     edit LineBreak.txt
   endif
+  let header = getline(1, 2)
   let linebreak = s:parse_prop(getline(1, '$'))
 
   enew
+
+  if header[0] =~# '^# LineBreak-.*\.txt'
+    $put ='\"' . header[0][1:]
+  endif
+  if header[1] =~# '^# Date: '
+    $put ='\"' . header[1][1:]
+  endif
 
   " MEMO: line length is optimized for Vim's reading buffer size.
   $put ='let s:tmp = []'
