@@ -996,7 +996,7 @@ call extend(s:tmp, [[0x1F810,0x1F847,'AL'],[0x1F850,0x1F859,'AL'],[0x1F860,0x1F8
 call extend(s:tmp, [[0x1F890,0x1F8AD,'AL'],[0x20000,0x2FFFD,'ID'],[0x30000,0x3FFFD,'ID']])
 call extend(s:tmp, [[0xE0001,0xE0001,'CM'],[0xE0020,0xE007F,'CM'],[0xE0100,0xE01EF,'CM']])
 call extend(s:tmp, [[0xF0000,0xFFFFD,'XX'],[0x100000,0x10FFFD,'XX']])
-let s:linebreak_table = s:tmp
+let s:lib.linebreak_table = s:tmp
 unlet s:tmp
 
 let s:tmp = []
