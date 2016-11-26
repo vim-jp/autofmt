@@ -1,0 +1,6 @@
+*~
+.*.sw?
+/test/*.failed
+/test/*.log
+/test/*.out
+/tools/LineBreak.txt
