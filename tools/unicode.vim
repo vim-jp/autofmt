@@ -82,7 +82,7 @@ function! s:main()
     endfor
     $put =printf('call extend(s:tmp, [%s])', s)
   endfor
-  $put ='let s:linebreak_table = s:tmp'
+  $put ='let s:lib.linebreak_table = s:tmp'
   $put ='unlet s:tmp'
   $put =''
 
@@ -104,7 +104,7 @@ function! s:main()
     let s = join(map(row, "'''' . v:val . ''''"), ',')
     $put =printf('call add(s:tmp, [%s])', s)
   endfor
-  $put ='let s:linebreak_bmp = s:tmp'
+  $put ='let s:lib.linebreak_bmp = s:tmp'
   $put ='unlet s:tmp'
   $put =''
 
