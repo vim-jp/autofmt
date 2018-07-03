@@ -1,0 +1,4 @@
+autofmt-customize	autofmt.txt	/*autofmt-customize*
+autofmt-language	autofmt.txt	/*autofmt-language*
+autofmt-usage	autofmt.txt	/*autofmt-usage*
+autofmt.txt	autofmt.txt	/*autofmt.txt*
