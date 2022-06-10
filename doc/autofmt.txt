@@ -67,7 +67,7 @@ For example, line break is not allowed before LEFT DOUBLE QUOTATION MARK
   set formatexpr=autofmt#uax14#formatexpr()
 
   " Customize Line Break Property
-  let s:unicode = unicode#import()
+  let s:unicode = autofmt#unicode#import()
   let s:orig_prop_line_break = s:unicode.prop_line_break
   function! s:unicode.prop_line_break(char)
     if a:char == "\u201c" || a:char == "\u2018"
