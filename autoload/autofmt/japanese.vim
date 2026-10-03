@@ -69,6 +69,19 @@ function! s:lib.check_boundary(lst, i)
       return "no_break"
     endif
   endif
+  " JIS X 4051: a line can be broken between Japanese and a word of ASCII
+  " characters, unless the word starts with a character prohibited at the
+  " start of a line.  A closing mark, such as '"', alone is not a word.
+  if lst[i - 1].w == 2 && len(lst[i].c) == 1
+        \ && stridx(tw_char, lst[i].c) == -1
+    let j = i
+    while j < len(lst) && len(lst[j].c) == 1 && lst[j].c !~ '\s'
+      if lst[j].c =~ '[[:alnum:]]'
+        return "allow_break"
+      endif
+      let j += 1
+    endwhile
+  endif
   " use compat for single byte text
   if len(lst[i - 1].c) == 1 && len(lst[i].c) == 1
     return s:compat.check_boundary(lst, i)
