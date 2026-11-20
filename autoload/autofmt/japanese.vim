@@ -71,12 +71,13 @@ function! s:lib.check_boundary(lst, i)
   endif
   " JIS X 4051: a line can be broken between Japanese and a word of ASCII
   " characters, unless the word starts with a character prohibited at the
-  " start of a line.  A closing mark, such as '"', alone is not a word.
+  " start of a line.  A run of only such characters and marks that may close
+  " a quote or a tag, such as '"' or "|", is not a word.
   if lst[i - 1].w == 2 && len(lst[i].c) == 1
         \ && stridx(tw_char, lst[i].c) == -1
     let j = i
     while j < len(lst) && len(lst[j].c) == 1 && lst[j].c !~ '\s'
-      if lst[j].c =~ '[[:alnum:]]'
+      if stridx(tw_char, lst[j].c) == -1 && lst[j].c !~ '["''`|*]'
         return "allow_break"
       endif
       let j += 1
